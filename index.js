@@ -1,33 +1,3 @@
-function factorialize(number1){
-    let count = number1;
-    if(count===0){
-        return 1;
-    }
-    else{
-        for(var i=1;i<count;i++){
-            number1=number1*i;
-        }
-        return number1;
-    }
-}
-factorialize(5);
-
-// Find longest word in a string
-function findLongestWord(stringVal) {
-  let arrayOfStrings = stringVal.split(" ");
-  let longestString = '';
-
-  for (let i = 0; i < arrayOfStrings.length; i++) {
-    if (longestString.length < arrayOfStrings[i].length) {
-      longestString = arrayOfStrings[i];
-    }
-  }
-  console.log(longestString)
-}
-
-findLongestWord('The Force is strong in this one');
-
-
 // Binary TREE PREORDER IN ITERATIVE WAY
 var preorderTraversal = function (root) {
   if (!root) return [];
@@ -41,5 +11,22 @@ var preorderTraversal = function (root) {
     if (node.right) stack.push(node.right);
     if (node.left) stack.push(node.left);
   }
+  return result;
+}
+
+// Binary TREE PREORDER IN RECURSIVE WAY
+var preorderTraversal(root) {
+  if (!root) return [];
+  const result = [];
+
+  const preorder = (node) => {
+    if (!node) return null;
+
+    result.push(node.val);
+    if (node.left) preorder(node.left);
+    if (node.right) preorder(node.right);
+  }
+
+  preorder(root);
   return result;
 }
