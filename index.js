@@ -56,6 +56,18 @@ var inorderTraversal = function (root) {
   return results;
 }
 
+//POSTORDER BINARY TREE RECURSIVE SOLUTION
+
+//left, node, right
+// 1. Create results Array
+// 2. Create traverse function
+//     a. if node is null, return
+//     b. if node.left exists, call traverse(node.left)
+//     c. if node.right exists, call traverse (node.right)
+//     d. Push node.val into results
+// 3. call traverse function;
+// 4. Return results
+
 var inorderTraversal = function (root) {
   let results = [];
   const traverse = (node) => {
