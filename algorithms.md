@@ -114,3 +114,62 @@ while (max >= min){
 }
 
 the base 2 logrithm of n (log 2 n)
+
+{Big Omega Notation}
+Sometimes we want to say that an algorithm takes at least a certain amount of time, without providing an upper bound. We use big omega notation, that is Greek letter "omega".
+
+If a running time is omega(f(n)), then for large enough n, the running time is at least k.f(n) for some constant k. 
+
+we say that the running time is "big-omega of f(n)." We use big-omega notation for asymptotic lower bounds. So it bounds the growth of the running time from below for large enough input sizes. 
+
+Just as Theta(f(n)) automatically implies O(f(n)), it also automatically implies Omega(f(n)). So we can say that the worst-case running time of binary search is Omega(base 2 lograthim n).
+
+We can also make correct, but imprecise, statments using big-Omega notation. For example, if you really do have a million dollars in your pocket, you can truthfully say"I have an amount of money in my pocket, and it's at leas 10 dollars." That is correct, but certainely not very precise. Similarly, we can correctly but imprecisely say that the worst-case running time of binary search is Omega-1, because we know that it takes at least constant time.
+
+Of course, typically, when we are talking about algorithms, we try to describe their running time as precisely as possible. We provide the examples of the imprecise statements here to help you better understand big-Omega, big-O and big-theta.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
