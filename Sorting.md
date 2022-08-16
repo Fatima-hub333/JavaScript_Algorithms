@@ -40,7 +40,7 @@ One of the steps in selection sort is to find the next-smallest card to put into
 
 Selection sort would wrap the value at index 3 with the value at index 0. Giving [4, 19, 18, 13, 10]. Now we need to find the index of the second-smallest value to swap into index 1.
 
-It might be tricky to write code that found the index of the second-smallest value in an array. 
+It might be tricky to write code that found the index of the second-smallest value in an array. But there is a better way. Notice that since the smallest value has already been swapped into index 0, what we really want is to find the smallest value in the part of the array that start at index 1. We call a section of an array s subarray, so that in this case, we want the index of the smallest value in the subarray that starts at index 1. 
 
 
 
