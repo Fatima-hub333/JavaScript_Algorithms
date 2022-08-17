@@ -74,3 +74,31 @@ Program.assertEqual(samething, [200, 250, 250, 300]);
 var loneStar = [150,110,200,201];
 selectionSort(loneStar);
 Program.assertEqual(loneStar, [110, 150, 200, 201, ]);
+
+
+{Selection Sort Loop}
+Selection sort loops over indices in the array; for each index, selection sort calls {indexOfMinimum} and {swap}. if the length of the array is n, there are (n) indices in the array.
+
+Since each execution of the body of the loop runs two lines of code, you might think that 2n lines of code are executed by selection sort. But it's not true!. Remember that indexofMinimum and swap are functions: when either is called, some lines of code are executed.
+
+How many lines are executed by a single call to {swap}? In the usual implementation, it's three lines, so that each call to swap takes Constant time.
+
+How many lines of code are executed by a single call to {indexOfMinimum}? We have to account for the loop inside {indexofMinimum}. How many times does this loop execute in a given call to {indexOfMinimum}? It depends on the size of the subarray that it's iterating over. If the subArray is the whole array (as it is on the first step), the loop body runs (n) times. If the subarray is of size 6, then the loop body runs 6 times.
+
+For example, lets say the whole array is of size 8 and think about how Selection sort works.
+
+1- In the first call of {indexOfMinimum}, it has to look at every value in the array, and so the loop body in {indexOfMinimum} runs 8 times.
+
+2- In the second call of {indexOfMinimum}, it has to look at every value in the subarray from indices 1 to 7, and so the loop body in {indexOfMinimum} runs 7 times.
+
+3- In the third call, it looks at the subarray from indices 2 to 7; the loop body runs 6 times.
+
+4- In the fourth call, it looks at the subarray from indices 3 to 7; the loop body runs 5 times.
+
+5- .....................
+
+6- In the eight and final call of indexofMinimum, the loop body runs just 1 time.
+
+If we total up the number of times the loop body of {indexOfMinimum} runs, we get 8 + 7+ 6+ 5 + 4+ 3+ 2+ 1 = 36 times.
+
+Arithmetic Series: The sum of the smallest and largest numbers is n + 1. (n + 1) (n/2)
