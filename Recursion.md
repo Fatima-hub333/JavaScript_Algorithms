@@ -95,6 +95,63 @@ Program.assertEqual(factorial(3), 6);
 Program.assertEqual(factorial(4), 24);
 
 
+Although JavaScript has a builtin (pow) function that computes powers of a number, you can write a similar function recursively, and it can be very effecient. The only hitch is that the exponent has to be an integer. 
+
+Suppose you want to compute x(n), where (x) is any real number and (n) is any integer. It's easy if (n) is 0, since x(0) = 1.
+
+1- The base case is when n = 0, and x(o)=1.
+2- If (n) is positive and even, recursively compute y = x (n/2), and then x(n) = y.y. 
+
+Recursion can be an elegant way to solve a problem, and many algorithms lend themselves to recursive solutions. However, recursive algorithms can be inefficient in terms of both time and space. We'll explore several techniques to improve their efficieny here.
+We can use a technique called 'Memorization' to save the computer time when making identical function calls. Memorization (a form of coaching) remembers the result of a function call with particular inputs in a lookup table and returns that result when the function is called again with the same inputs.
+
+If n =0, return 1.
+Otherwise if n is in memo return the memo value for n
+otherwise, 'calculate (n -1)! x n
+store result in the memo
+return result
+
+Memorization makes a trade-off between time & space. As long as the lookup is efficient and the function is called repeatedly, the computer can save time at the cost of using memory to store the memo.
+
+In the case of the factorial function, an algorithm only benefits from the optimization of memoriazation when a program makes repeated calls to the function during its execution. In some cases, however, memorization can save time even for a single call to a recursive function.
+
+Let's look at a simple example, the algorithm for generating Fibonnaci numbers.
+The Fibonnacci sequence is a famous series of numbers where the next number in the sequence is the sum of the previous 2 numbers. The first two numbers in the sequence are defined as 0 and 1. After that, the next number is 1 (from 0 +1) and the number after that is 2 (from 1 + 1) and so on.
+
+The First 10 Fibonnaci numbers:
+0, 1, 1, 2, 3, 5, 8, 13, 21, 34
+
+if n is 0 or 1, return n.
+Otherwise, return fibonanci(n-1)+ fibonacci ( n - 2)
+
+If n is 0 or 1, return n
+Otherwise, if n is in the memo, return the memo's value for n
+otherwise, 
+Calculate fibonacci(n -1) + fibonacci (n-2)
+Store result in memo
+Return result
+
+In the case of generating Fibonnaci numbers, an iterative technique called the "bottom-up Approach" can save us both time & space. When using a bottom-up approach, the computer solves the sub-problems first and uses the partial results to arrive at the final result.
+
+A bottom-up approach to Fibonacci number generation looks like this:
+if n is 0 or 1, return n
+otherwise Create variable twoBehind to remember the result of (n-2) and initialize to 0.
+Create variable OneBehind to remember the result of (n - 1) and initialize to 1.
+Create variable result to store the final result and initialize to 0.
+Repeat (n - 1) times;
+Update result to the sum of twoBehind plus oneBehind
+Update twoBehind to store the current value of OneBehind
+Update oneBehind to store the current value of result
+Return result
+
+This approach never makes a recursive call; it instead uses iteration to sum up the partial results and calculate the number. The Bottom-up algorithm has the same O(n) time complexity as the memorized algorithm but it requires just O(1) space since it only remembers three numbers at a time.
+
+{Dynamic Programming}
+Memorization & bottom-up are both techniques from dynamic programming, a problem-solving strategy used in mathematics and computer science. Dynamic programming can be used when a problem has optimal substructure and overlapping subproblems. Optimal substructure means that the optimal solution to the problem can be created from optimal solutions of its subproblems. In other words, fib(5) can be solved with fib(4) and fib(3). Overlapping subproblems happen whenever a subproblem is solved multiple times, which we saw when fib(5) made multiple calls to the typically recursive fib(3) and fib(2).
+
+Dynamic programming can be used for a range of problems and invloves techniques besides the ones we learned here. If you're working on a problem with optimal substructure and overlapping subproblems, consider whether a dynamic programming approach may work.
+
+
 
 
 
