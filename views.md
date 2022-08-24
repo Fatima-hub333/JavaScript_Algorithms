@@ -1,0 +1,6 @@
+The view in Rails takes us all the way full circle back to the very beginning of web development with HTML. You can write out your all HTML file as you normally would & Rails would do nothing different to it at all. However, with the addition of ERB, we now have the ability to create more dynamic HTML layouts and our HTML goes from being a static page to a dynamic template!
+
+Properly understanding Rails views is a powerful way to create a dynamic user experience while saving a lot of time. The best practices that are kept when working with other such files will be equally important here as we work to keep our HTML semantic by choosing the right elements, to keep it DRY by reusing code whenever possible, and of course, we don't want logic here. However, because the Rails view doesnot necessarily have to use anything but HTML it can be really easy to give ourselves extra work.
+
+{What is ERB?}
+ERB stands for Embedded Ruby but it is just HTML that gets to use a new type of element. Ruby elements. By processing an ERB file we can now go from putting this in the view: (<h1>Hello World!</h1>) to putting this in controller: @greetings = 'Hello World' and getting to put this in the view: <h1><%= greetings %></h1>.
