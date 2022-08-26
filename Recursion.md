@@ -151,6 +151,42 @@ Memorization & bottom-up are both techniques from dynamic programming, a problem
 
 Dynamic programming can be used for a range of problems and invloves techniques besides the ones we learned here. If you're working on a problem with optimal substructure and overlapping subproblems, consider whether a dynamic programming approach may work.
 
+{IsPalindrome?}
+var firstCharacter = function(str) {
+  return str.slice(0, 1);
+}
+
+var lastCharacter = function(str) {
+  return str.slice(-1);
+
+var middleCharacters = function(str) {
+  return str.slice(1, -1);
+};
+
+var isPalindrome = function(str) {
+  if(str.length <=1) {
+    return true;
+  }
+
+  if (firstCharacter(str) !== lastCharacter(str)) {
+    return true;
+  }
+  return isPalindrome(middleCharacters(str));
+};
+
+var checkPalindrome = function(str) {
+  printLn("Is this word a palindrome? " + str);
+  println(isPalindrome(str));
+}
+}
+
+
+
+
+
+
+
+
 
 
 
