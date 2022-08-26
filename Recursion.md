@@ -180,6 +180,42 @@ var checkPalindrome = function(str) {
 }
 }
 
+var isEven = function(n) {
+  return n % 2 === 0;
+};
+
+var isOdd = function(n) {
+  return !isEven(n);
+};
+
+var power = function(x, n) {
+  println("Computing " + x + " raised to power " + n + ".");
+  if(n === 0) {
+    return 1;
+  }
+
+  if (n === 0) {
+    return 1;
+  }
+
+  if(n < 0) {
+    return 1 /(powerx, abs(n)));
+  }
+  return x * power(x, n-1);
+};
+
+var displayPower = function(x, n) {
+  println(x + "to the " + n + " is " + power(x, n));
+};
+
+displayPower(3, 0);
+Program.assertEqual(power(3, 0), 1);
+
+
+
+
+
+
 
 
 
